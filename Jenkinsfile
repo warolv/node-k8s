@@ -29,7 +29,7 @@ pipeline {
       steps {
         container('docker') {
           sh "docker build -t ${IMAGE_TAG} -t warolv/${APP_NAME}:latest ."
-          sh "docker login -u=warolv -p=typhoon81"
+          sh "docker login -u=username -p=password"
           sh "docker push ${IMAGE_TAG}"
           sh "docker push warolv/${APP_NAME}:latest"
         }   
